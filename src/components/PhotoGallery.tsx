@@ -34,23 +34,26 @@ const PhotoGallery = () => {
           Каждое фото — это частичка счастья и воспоминаний! 💕
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {photos.map((photo, index) => (
             <Card
               key={index}
-              className="group overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white/70 backdrop-blur-sm border-2 border-purple-200"
+              className="group overflow-hidden hover:shadow-2xl transition-all duration-700 transform hover:scale-105 bg-gradient-to-br from-pink-200/80 to-purple-200/80 backdrop-blur-sm border-4 border-gradient-to-r from-pink-400 to-purple-500 rounded-3xl"
             >
               <div className="relative">
                 <img
                   src={photo.url}
                   alt={photo.alt}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-96 md:h-[500px] object-cover transition-transform duration-700 group-hover:scale-110 rounded-2xl"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute bottom-4 left-4 right-4">
-                  <p className="text-white font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-open-sans">
-                    {photo.alt} ✨
-                  </p>
+                <div className="absolute inset-0 bg-gradient-to-t from-pink-600/30 via-purple-500/20 to-yellow-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-rainbow-500/10 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-gradient-to-r from-pink-500/90 to-purple-600/90 rounded-2xl p-4 backdrop-blur-sm">
+                    <p className="text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 font-open-sans text-center">
+                      {photo.alt} ✨💖
+                    </p>
+                  </div>
                 </div>
               </div>
             </Card>
